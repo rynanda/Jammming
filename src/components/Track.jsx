@@ -1,11 +1,12 @@
 import React from 'react';
 
 function Track(props) {
-    const { trackName, artist, album } = props.track;
+    const { name, artist, album } = props.track;
 
     return (
         <>
-            <p>{trackName} by {artist} from {album}</p>
+            <p>{name} by {artist} from {album}</p>
+            <button onClick={() => props.onAdd(props.track)}>+</button>
         </>
     )
 }

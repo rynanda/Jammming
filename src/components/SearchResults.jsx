@@ -13,7 +13,7 @@ function SearchResults(props) {
     return (
         <>
             <h3>Results: </h3>
-            <TrackList tracks={tracks} onAdd={props.onAdd} />
+            <TrackList tracks={tracks} onAdd={props.onAdd} type='search' />
         </>
     )
 }

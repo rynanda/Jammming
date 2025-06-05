@@ -6,7 +6,8 @@ function Track(props) {
     return (
         <>
             <p>{name} by {artist} from {album}</p>
-            <button onClick={() => props.onAdd(props.track)}>+</button>
+            {props.type === 'search' && <button onClick={() => props.onAdd(props.track)}>+</button>}
+            {props.type === 'playlist' && <button onClick={() => props.onRemove(props.track)}>-</button>}
         </>
     )
 }

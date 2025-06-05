@@ -7,13 +7,13 @@ function SearchResults(props) {
     const [tracks, setTracks] = useState([]);
 
     useEffect(() => {
-        setTracks(mockSpotifyData.filter(track => track.trackName.toLowerCase().includes(props.search)));
+        setTracks(mockSpotifyData.filter(track => track.name.toLowerCase().includes(props.search)));
     }, [props.search]);
 
     return (
         <>
             <h3>Results: </h3>
-            <TrackList tracks={tracks} />
+            <TrackList tracks={tracks} onAdd={props.onAdd} />
         </>
     )
 }

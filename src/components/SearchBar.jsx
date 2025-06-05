@@ -1,10 +1,7 @@
 import React, {useState} from 'react';
-import SearchResults from "./SearchResults.jsx";
 
-function SearchBar() {
-    const [search, setSearch] = useState('');
+function SearchBar(props) {
     const [input, setInput] = useState('');
-    const [showResults, setShowResults] = useState(false);
 
     function handleInput(e) {
         setInput(e.target.value);
@@ -12,8 +9,8 @@ function SearchBar() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        setSearch(input);
-        setShowResults(true);
+        props.setSearch(input);
+        props.setHasSearched(true);
     }
 
     return (
@@ -22,7 +19,6 @@ function SearchBar() {
                 <input id="search" type="text" onChange={handleInput} placeholder={"Track Name"}/>
                 <button type="submit">Search</button>
             </form>
-            {showResults && (<SearchResults search={search}/>)}
         </>
     )
 }

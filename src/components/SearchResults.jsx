@@ -6,7 +6,7 @@ function SearchResults(props) {
     return (
         <>
             <h3>Results: </h3>
-            <TrackList search={props.search}/>
+            {props.search && <TrackList search={props.search}/>}
         </>
     )
 }
